@@ -30,12 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,6 +44,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
@@ -50,54 +52,8 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(629, 94);
+            this.panel1.Size = new System.Drawing.Size(678, 94);
             this.panel1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(3, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 69);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Müşteri Bilgileri";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Location = new System.Drawing.Point(102, 22);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 69);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Müşteri Ekle";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Location = new System.Drawing.Point(194, 22);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(99, 69);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Müşteri Sil";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(404, 25);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 69);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "button1";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
@@ -113,12 +69,76 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(512, 25);
+            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button6.Location = new System.Drawing.Point(486, 22);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 69);
+            this.button6.Size = new System.Drawing.Size(97, 69);
             this.button6.TabIndex = 0;
-            this.button6.Text = "button1";
+            this.button6.Text = "Sözleşme";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button4.Location = new System.Drawing.Point(395, 22);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(96, 69);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "Araç Ekle";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.Location = new System.Drawing.Point(194, 22);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(99, 69);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "Müşteri Sil";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.Location = new System.Drawing.Point(102, 22);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(95, 69);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Müşteri Ekle";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Location = new System.Drawing.Point(3, 22);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(104, 69);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Müşteri Bilgileri";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button7
+            // 
+            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button7.Location = new System.Drawing.Point(581, 22);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(97, 69);
+            this.button7.TabIndex = 0;
+            this.button7.Text = "Çıkış";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button7.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -127,7 +147,7 @@
             this.AutoScrollMargin = new System.Drawing.Size(400, 250);
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(621, 416);
+            this.ClientSize = new System.Drawing.Size(755, 416);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -146,5 +166,6 @@
         private Button button3;
         private Button button2;
         private Button button1;
+        private Button button7;
     }
 }
