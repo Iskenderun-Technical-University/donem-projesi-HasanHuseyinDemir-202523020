@@ -73,6 +73,7 @@
             this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Ürün Adı";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -82,6 +83,7 @@
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Ürün Kodu";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtkod
             // 
@@ -107,6 +109,7 @@
             this.label3.Size = new System.Drawing.Size(83, 13);
             this.label3.TabIndex = 3;
             this.label3.Text = "Ürün Satış Fiyatı";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -116,6 +119,7 @@
             this.label4.Size = new System.Drawing.Size(76, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Ürün Alış Fiyatı";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // button1
             // 

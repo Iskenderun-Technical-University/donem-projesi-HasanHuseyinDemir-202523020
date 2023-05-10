@@ -33,5 +33,21 @@ namespace WindowsFormsApp1
             this.Hide();
             form2.ShowDialog();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            urunler urunler = new urunler();
+            this.Hide();
+            urunler.ShowDialog();
+        }
     }
 }

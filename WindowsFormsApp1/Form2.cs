@@ -33,13 +33,16 @@ namespace WindowsFormsApp1
         {
             Form1 form1gecis=new Form1();
             this.Hide();
-
             form1gecis.ShowDialog();
+            this.Close();
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            Form1 form1gecis=new Form1();
+            this.Hide();
+            form1gecis.ShowDialog();
             this.Close();
         }
 
@@ -54,6 +57,26 @@ namespace WindowsFormsApp1
             komut2.Parameters.AddWithValue("@urunsatiş", txtsatiş.Text);
             market_otomasyon.ekle_sil_güncelle(komut2,cumle);
             foreach (Control item in Controls) if (item is TextBox) item.Text="";
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }
