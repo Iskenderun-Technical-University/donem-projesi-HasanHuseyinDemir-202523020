@@ -49,5 +49,19 @@ namespace WindowsFormsApp1
             this.Hide();
             urunler.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3();
+            this.Hide();
+            form3.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form3 satısfiyat = new Form3();
+            this.Hide();
+            satısfiyat.ShowDialog();
+        }
     }
 }

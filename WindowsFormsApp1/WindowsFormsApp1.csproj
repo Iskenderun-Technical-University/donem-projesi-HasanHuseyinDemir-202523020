@@ -59,6 +59,32 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="market_otomasyonDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>market_otomasyonDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="market_otomasyonDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>market_otomasyonDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="market_otomasyonDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>market_otomasyonDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="market_otomasyonDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>market_otomasyonDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="urunler.cs">
@@ -73,6 +99,9 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -85,6 +114,50 @@
     <EmbeddedResource Include="urunler.resx">
       <DependentUpon>urunler.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="market_otomasyonDataSet.xsc">
+      <DependentUpon>market_otomasyonDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="market_otomasyonDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>market_otomasyonDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="market_otomasyonDataSet.xss">
+      <DependentUpon>market_otomasyonDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="market_otomasyonDataSet1.xsc">
+      <DependentUpon>market_otomasyonDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="market_otomasyonDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>market_otomasyonDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="market_otomasyonDataSet1.xss">
+      <DependentUpon>market_otomasyonDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="market_otomasyonDataSet2.xsc">
+      <DependentUpon>market_otomasyonDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="market_otomasyonDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>market_otomasyonDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="market_otomasyonDataSet2.xss">
+      <DependentUpon>market_otomasyonDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="market_otomasyonDataSet3.xsc">
+      <DependentUpon>market_otomasyonDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="market_otomasyonDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>market_otomasyonDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="market_otomasyonDataSet3.xss">
+      <DependentUpon>market_otomasyonDataSet3.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
