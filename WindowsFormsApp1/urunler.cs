@@ -80,6 +80,7 @@ namespace WindowsFormsApp1
             txtad.Text=satir.Cells[0].Value.ToString();
             txtkod.Text=satir.Cells[1].Value.ToString();
             txtaliş.Text=satir.Cells[2].Value.ToString();
+            txtsatiş.Text=satir.Cells[3].Value.ToString();
 
 
         }
