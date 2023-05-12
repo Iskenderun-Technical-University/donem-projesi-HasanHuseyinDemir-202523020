@@ -30,6 +30,13 @@ namespace WindowsFormsApp1
             SqlDataAdapter adtr2 = new SqlDataAdapter();
             dataGridView1.DataSource=marketotomasyon.listele(adtr2, cümle);
         }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form1 form1gecis = new Form1();
+            this.Hide();
+            form1gecis.ShowDialog();
+            this.Close();
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {

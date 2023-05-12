@@ -128,7 +128,7 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.ForeColor = System.Drawing.Color.Navy;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.Location = new System.Drawing.Point(336, 256);
+            this.button1.Location = new System.Drawing.Point(346, 238);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 41);
             this.button1.TabIndex = 4;
@@ -139,21 +139,31 @@
             // 
             // btnekle
             // 
-            this.btnekle.Location = new System.Drawing.Point(160, 182);
+            this.btnekle.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnekle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnekle.BackgroundImage")));
+            this.btnekle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnekle.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnekle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnekle.Location = new System.Drawing.Point(132, 182);
             this.btnekle.Name = "btnekle";
-            this.btnekle.Size = new System.Drawing.Size(75, 23);
+            this.btnekle.Size = new System.Drawing.Size(103, 50);
             this.btnekle.TabIndex = 5;
             this.btnekle.Text = "Ekle";
-            this.btnekle.UseVisualStyleBackColor = true;
+            this.btnekle.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnekle.UseVisualStyleBackColor = false;
             this.btnekle.Click += new System.EventHandler(this.button2_Click);
             // 
             // btniptal
             // 
-            this.btniptal.Location = new System.Drawing.Point(261, 182);
+            this.btniptal.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btniptal.BackgroundImage")));
+            this.btniptal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btniptal.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btniptal.Location = new System.Drawing.Point(270, 182);
             this.btniptal.Name = "btniptal";
-            this.btniptal.Size = new System.Drawing.Size(75, 23);
+            this.btniptal.Size = new System.Drawing.Size(107, 50);
             this.btniptal.TabIndex = 6;
             this.btniptal.Text = "İptal";
+            this.btniptal.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.btniptal.UseVisualStyleBackColor = true;
             this.btniptal.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -161,7 +171,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(433, 309);
+            this.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.ClientSize = new System.Drawing.Size(433, 283);
             this.Controls.Add(this.btniptal);
             this.Controls.Add(this.btnekle);
             this.Controls.Add(this.button1);
