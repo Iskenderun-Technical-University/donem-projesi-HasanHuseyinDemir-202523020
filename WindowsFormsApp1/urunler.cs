@@ -29,6 +29,11 @@ namespace WindowsFormsApp1
             string cümle = "select *from urunekle";
             SqlDataAdapter adtr2 = new SqlDataAdapter();
             dataGridView1.DataSource=marketotomasyon.listele(adtr2, cümle);
+            dataGridView1.Columns[0].HeaderText="URUN ADİ";
+            dataGridView1.Columns[1].HeaderText="URUN KODU";
+            dataGridView1.Columns[2].HeaderText="URUN ALİŞ FİYATİ";
+            dataGridView1.Columns[3].HeaderText="URUN SATİŞ FİYATİ";
+
         }
         private void button3_Click(object sender, EventArgs e)
         {
@@ -63,6 +68,9 @@ namespace WindowsFormsApp1
         {
             string cümle = "select *from urunekle where urunkodu like '%"+textBox5.Text+"%'";
             SqlDataAdapter adtr2 = new SqlDataAdapter();
+           
+
+
             dataGridView1.DataSource=marketotomasyon.listele(adtr2, cümle);
         }
 
@@ -72,8 +80,23 @@ namespace WindowsFormsApp1
             txtad.Text=satir.Cells[0].Value.ToString();
             txtkod.Text=satir.Cells[1].Value.ToString();
             txtaliş.Text=satir.Cells[2].Value.ToString();
-            txtsatiş.Text=satir.Cells[3].Value.ToString();
 
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow satir = dataGridView1.CurrentRow;
+
+            string cümle ="delete from urunekle where urunkodu='"+satir.Cells["urunkodu"].Value.ToString()+"'";
+            SqlCommand komut2= new SqlCommand();
+            marketotomasyon.ekle_sil_güncelle(komut2, cümle);
+            //foreach (Control item in Controls) if (item is TextBox) item.Text="";
+            Yenilelistele();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
