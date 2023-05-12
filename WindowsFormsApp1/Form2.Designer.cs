@@ -126,13 +126,15 @@
             this.button1.BackColor = System.Drawing.Color.Silver;
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.ForeColor = System.Drawing.Color.Navy;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.Location = new System.Drawing.Point(346, 238);
+            this.button1.Location = new System.Drawing.Point(358, 281);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 41);
             this.button1.TabIndex = 4;
             this.button1.Text = "Ana Sayfa";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -172,7 +174,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ClientSize = new System.Drawing.Size(433, 283);
+            this.ClientSize = new System.Drawing.Size(444, 323);
             this.Controls.Add(this.btniptal);
             this.Controls.Add(this.btnekle);
             this.Controls.Add(this.button1);
