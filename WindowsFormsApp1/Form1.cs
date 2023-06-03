@@ -59,9 +59,9 @@ namespace WindowsFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form3 satısfiyat = new Form3();
+            Form4 form4 = new Form4();
             this.Hide();
-            satısfiyat.ShowDialog();
+            form4.ShowDialog();
         }
     }
 }
