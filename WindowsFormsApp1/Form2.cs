@@ -48,13 +48,15 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string cumle = "insert into urunekle(urunadi,urunkodu,urunaliş,urunsatiş) values(@urunadi,@urunkodu,@urunaliş,@urunsatiş)";
+            string cumle = "insert into urunekle(urunadi,urunkodu,urunaliş,urunsatiş,urunmiktar) values(@urunadi,@urunkodu,@urunaliş,@urunsatiş,@urunmiktar)";
             SqlCommand komut2 = new SqlCommand();
 
             komut2.Parameters.AddWithValue("@urunadi", txtad.Text);
             komut2.Parameters.AddWithValue("@urunkodu", txtkod.Text);
             komut2.Parameters.AddWithValue("@urunaliş", txtaliş.Text);
             komut2.Parameters.AddWithValue("@urunsatiş", txtsatiş.Text);
+            komut2.Parameters.AddWithValue("@urunmiktar", txtmiktar.Text);
+
             market_otomasyon.ekle_sil_güncelle(komut2,cumle);
             foreach (Control item in Controls) if (item is TextBox) item.Text="";
 

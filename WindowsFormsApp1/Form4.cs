@@ -26,7 +26,10 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Form1 form1gecis = new Form1();
+            this.Hide();
+            form1gecis.ShowDialog();
+            this.Close();
         }
     }
 }

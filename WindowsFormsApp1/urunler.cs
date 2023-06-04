@@ -33,6 +33,8 @@ namespace WindowsFormsApp1
             dataGridView1.Columns[1].HeaderText="URUN KODU";
             dataGridView1.Columns[2].HeaderText="URUN ALİŞ FİYATİ";
             dataGridView1.Columns[3].HeaderText="URUN SATİŞ FİYATİ";
+            dataGridView1.Columns[4].HeaderText="URUN MİKTARI";
+
 
         }
         private void button3_Click(object sender, EventArgs e)
@@ -45,12 +47,14 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string cümle = "update urunekle set urunadi=@urunadi,urunaliş=@urunaliş,urunsatiş=@urunsatiş where urunkodu=@urunkodu";
+            string cümle = "update urunekle set urunadi=@urunadi,urunaliş=@urunaliş,urunsatiş=@urunsatiş,urunmiktar=@urunmiktar where urunkodu=@urunkodu";
             SqlCommand komut2 = new SqlCommand();
             komut2.Parameters.AddWithValue("@urunadi", txtad.Text);
             komut2.Parameters.AddWithValue("@urunkodu", txtkod.Text);
             komut2.Parameters.AddWithValue("@urunaliş", txtaliş.Text);
             komut2.Parameters.AddWithValue("@urunsatiş", txtsatiş.Text);
+            komut2.Parameters.AddWithValue("@urunmiktar", txtmiktar.Text);
+
             marketotomasyon.ekle_sil_güncelle(komut2, cümle);
             foreach (Control item in Controls) if (item is TextBox) item.Text="";
             Yenilelistele();
@@ -81,6 +85,8 @@ namespace WindowsFormsApp1
             txtkod.Text=satir.Cells[1].Value.ToString();
             txtaliş.Text=satir.Cells[2].Value.ToString();
             txtsatiş.Text=satir.Cells[3].Value.ToString();
+            txtmiktar.Text=satir.Cells[4].Value.ToString();
+
 
 
         }

@@ -44,6 +44,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtmiktar = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,11 +118,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 169);
+            this.label4.Location = new System.Drawing.Point(4, 201);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 13);
+            this.label4.Size = new System.Drawing.Size(64, 13);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Ürün Satış Fiyatı";
+            this.label4.Text = "Ürün Miktarı";
             // 
             // button1
             // 
@@ -140,7 +142,7 @@
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.Cursor = System.Windows.Forms.Cursors.SizeWE;
-            this.button2.Location = new System.Drawing.Point(25, 208);
+            this.button2.Location = new System.Drawing.Point(16, 224);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 58);
             this.button2.TabIndex = 6;
@@ -153,7 +155,7 @@
             // 
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Location = new System.Drawing.Point(140, 208);
+            this.button3.Location = new System.Drawing.Point(140, 224);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 58);
             this.button3.TabIndex = 6;
@@ -192,6 +194,22 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Kod ara";
             // 
+            // txtmiktar
+            // 
+            this.txtmiktar.Location = new System.Drawing.Point(93, 198);
+            this.txtmiktar.Name = "txtmiktar";
+            this.txtmiktar.Size = new System.Drawing.Size(100, 20);
+            this.txtmiktar.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(4, 169);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(83, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Ürün Satış Fiyatı";
+            // 
             // urunler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,12 +220,14 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtaliş);
+            this.Controls.Add(this.txtmiktar);
             this.Controls.Add(this.txtsatiş);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.txtkod);
@@ -239,5 +259,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtmiktar;
+        private System.Windows.Forms.Label label6;
     }
 }

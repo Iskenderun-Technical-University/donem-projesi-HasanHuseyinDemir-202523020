@@ -96,6 +96,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>market_otomasyonDataSet4.xsd</DependentUpon>
     </Compile>
+    <Compile Include="market_otomasyonDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>market_otomasyonDataSet5.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="urunler.cs">
@@ -182,6 +187,17 @@
     </None>
     <None Include="market_otomasyonDataSet4.xss">
       <DependentUpon>market_otomasyonDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="market_otomasyonDataSet5.xsc">
+      <DependentUpon>market_otomasyonDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="market_otomasyonDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>market_otomasyonDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="market_otomasyonDataSet5.xss">
+      <DependentUpon>market_otomasyonDataSet5.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

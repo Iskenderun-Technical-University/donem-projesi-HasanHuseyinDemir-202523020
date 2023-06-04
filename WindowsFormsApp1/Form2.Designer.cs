@@ -42,6 +42,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnekle = new System.Windows.Forms.Button();
             this.btniptal = new System.Windows.Forms.Button();
+            this.txtmiktar = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtsatiş
@@ -146,7 +148,7 @@
             this.btnekle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnekle.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnekle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnekle.Location = new System.Drawing.Point(132, 182);
+            this.btnekle.Location = new System.Drawing.Point(132, 200);
             this.btnekle.Name = "btnekle";
             this.btnekle.Size = new System.Drawing.Size(103, 50);
             this.btnekle.TabIndex = 5;
@@ -160,7 +162,7 @@
             this.btniptal.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btniptal.BackgroundImage")));
             this.btniptal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btniptal.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btniptal.Location = new System.Drawing.Point(270, 182);
+            this.btniptal.Location = new System.Drawing.Point(273, 200);
             this.btniptal.Name = "btniptal";
             this.btniptal.Size = new System.Drawing.Size(107, 50);
             this.btniptal.TabIndex = 6;
@@ -169,12 +171,30 @@
             this.btniptal.UseVisualStyleBackColor = true;
             this.btniptal.Click += new System.EventHandler(this.button3_Click);
             // 
+            // txtmiktar
+            // 
+            this.txtmiktar.Location = new System.Drawing.Point(211, 170);
+            this.txtmiktar.Name = "txtmiktar";
+            this.txtmiktar.Size = new System.Drawing.Size(100, 20);
+            this.txtmiktar.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(143, 174);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Ürün Miktarı";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(444, 323);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtmiktar);
             this.Controls.Add(this.btniptal);
             this.Controls.Add(this.btnekle);
             this.Controls.Add(this.button1);
@@ -208,5 +228,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnekle;
         private System.Windows.Forms.Button btniptal;
+        private System.Windows.Forms.TextBox txtmiktar;
+        private System.Windows.Forms.Label label5;
     }
 }
