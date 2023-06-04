@@ -37,6 +37,13 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.urunkoduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.urunadiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.urunmiktarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.satişfiyatiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toplamfiyatiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sepetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.market_otomasyonDataSet5 = new WindowsFormsApp1.market_otomasyonDataSet5();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,18 +61,11 @@
             this.button10 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.lblGenelToplam = new System.Windows.Forms.Label();
-            this.market_otomasyonDataSet5 = new WindowsFormsApp1.market_otomasyonDataSet5();
-            this.sepetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sepetTableAdapter = new WindowsFormsApp1.market_otomasyonDataSet5TableAdapters.SepetTableAdapter();
-            this.urunkoduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.urunadiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.urunmiktarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.satişfiyatiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toplamfiyatiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.market_otomasyonDataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sepetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.market_otomasyonDataSet5)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -125,7 +125,7 @@
             this.button5.BackColor = System.Drawing.SystemColors.Control;
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button5.Location = new System.Drawing.Point(713, 370);
+            this.button5.Location = new System.Drawing.Point(693, 12);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(95, 85);
             this.button5.TabIndex = 0;
@@ -158,15 +158,55 @@
             this.satişfiyatiDataGridViewTextBoxColumn,
             this.toplamfiyatiDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.sepetBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(206, 141);
+            this.dataGridView1.Location = new System.Drawing.Point(208, 133);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(512, 225);
+            this.dataGridView1.Size = new System.Drawing.Size(512, 240);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // urunkoduDataGridViewTextBoxColumn
+            // 
+            this.urunkoduDataGridViewTextBoxColumn.DataPropertyName = "urunkodu";
+            this.urunkoduDataGridViewTextBoxColumn.HeaderText = "urunkodu";
+            this.urunkoduDataGridViewTextBoxColumn.Name = "urunkoduDataGridViewTextBoxColumn";
+            // 
+            // urunadiDataGridViewTextBoxColumn
+            // 
+            this.urunadiDataGridViewTextBoxColumn.DataPropertyName = "urunadi";
+            this.urunadiDataGridViewTextBoxColumn.HeaderText = "urunadi";
+            this.urunadiDataGridViewTextBoxColumn.Name = "urunadiDataGridViewTextBoxColumn";
+            // 
+            // urunmiktarDataGridViewTextBoxColumn
+            // 
+            this.urunmiktarDataGridViewTextBoxColumn.DataPropertyName = "urunmiktar";
+            this.urunmiktarDataGridViewTextBoxColumn.HeaderText = "urunmiktar";
+            this.urunmiktarDataGridViewTextBoxColumn.Name = "urunmiktarDataGridViewTextBoxColumn";
+            // 
+            // satişfiyatiDataGridViewTextBoxColumn
+            // 
+            this.satişfiyatiDataGridViewTextBoxColumn.DataPropertyName = "satişfiyati";
+            this.satişfiyatiDataGridViewTextBoxColumn.HeaderText = "satişfiyati";
+            this.satişfiyatiDataGridViewTextBoxColumn.Name = "satişfiyatiDataGridViewTextBoxColumn";
+            // 
+            // toplamfiyatiDataGridViewTextBoxColumn
+            // 
+            this.toplamfiyatiDataGridViewTextBoxColumn.DataPropertyName = "toplamfiyati";
+            this.toplamfiyatiDataGridViewTextBoxColumn.HeaderText = "toplamfiyati";
+            this.toplamfiyatiDataGridViewTextBoxColumn.Name = "toplamfiyatiDataGridViewTextBoxColumn";
+            // 
+            // sepetBindingSource
+            // 
+            this.sepetBindingSource.DataMember = "Sepet";
+            this.sepetBindingSource.DataSource = this.market_otomasyonDataSet5;
+            // 
+            // market_otomasyonDataSet5
+            // 
+            this.market_otomasyonDataSet5.DataSetName = "market_otomasyonDataSet5";
+            this.market_otomasyonDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox1.BackColor = System.Drawing.Color.Silver;
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
@@ -250,6 +290,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 0;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // textBox2
             // 
@@ -259,6 +300,7 @@
             this.textBox2.TabIndex = 0;
             this.textBox2.Text = "1";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox1
             // 
@@ -288,16 +330,17 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(130, 372);
+            this.button9.Location = new System.Drawing.Point(130, 365);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(75, 44);
             this.button9.TabIndex = 7;
             this.button9.Text = "EKLE";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(546, 372);
+            this.button10.Location = new System.Drawing.Point(644, 372);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(75, 44);
             this.button10.TabIndex = 8;
@@ -307,7 +350,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(341, 388);
+            this.label6.Location = new System.Drawing.Point(381, 388);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 13);
             this.label6.TabIndex = 9;
@@ -321,49 +364,9 @@
             this.lblGenelToplam.Size = new System.Drawing.Size(0, 13);
             this.lblGenelToplam.TabIndex = 10;
             // 
-            // market_otomasyonDataSet5
-            // 
-            this.market_otomasyonDataSet5.DataSetName = "market_otomasyonDataSet5";
-            this.market_otomasyonDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sepetBindingSource
-            // 
-            this.sepetBindingSource.DataMember = "Sepet";
-            this.sepetBindingSource.DataSource = this.market_otomasyonDataSet5;
-            // 
             // sepetTableAdapter
             // 
             this.sepetTableAdapter.ClearBeforeFill = true;
-            // 
-            // urunkoduDataGridViewTextBoxColumn
-            // 
-            this.urunkoduDataGridViewTextBoxColumn.DataPropertyName = "urunkodu";
-            this.urunkoduDataGridViewTextBoxColumn.HeaderText = "urunkodu";
-            this.urunkoduDataGridViewTextBoxColumn.Name = "urunkoduDataGridViewTextBoxColumn";
-            // 
-            // urunadiDataGridViewTextBoxColumn
-            // 
-            this.urunadiDataGridViewTextBoxColumn.DataPropertyName = "urunadi";
-            this.urunadiDataGridViewTextBoxColumn.HeaderText = "urunadi";
-            this.urunadiDataGridViewTextBoxColumn.Name = "urunadiDataGridViewTextBoxColumn";
-            // 
-            // urunmiktarDataGridViewTextBoxColumn
-            // 
-            this.urunmiktarDataGridViewTextBoxColumn.DataPropertyName = "urunmiktar";
-            this.urunmiktarDataGridViewTextBoxColumn.HeaderText = "urunmiktar";
-            this.urunmiktarDataGridViewTextBoxColumn.Name = "urunmiktarDataGridViewTextBoxColumn";
-            // 
-            // satişfiyatiDataGridViewTextBoxColumn
-            // 
-            this.satişfiyatiDataGridViewTextBoxColumn.DataPropertyName = "satişfiyati";
-            this.satişfiyatiDataGridViewTextBoxColumn.HeaderText = "satişfiyati";
-            this.satişfiyatiDataGridViewTextBoxColumn.Name = "satişfiyatiDataGridViewTextBoxColumn";
-            // 
-            // toplamfiyatiDataGridViewTextBoxColumn
-            // 
-            this.toplamfiyatiDataGridViewTextBoxColumn.DataPropertyName = "toplamfiyati";
-            this.toplamfiyatiDataGridViewTextBoxColumn.HeaderText = "toplamfiyati";
-            this.toplamfiyatiDataGridViewTextBoxColumn.Name = "toplamfiyatiDataGridViewTextBoxColumn";
             // 
             // Form1
             // 
@@ -391,10 +394,10 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sepetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.market_otomasyonDataSet5)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.market_otomasyonDataSet5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sepetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

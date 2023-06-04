@@ -25,10 +25,7 @@ namespace WindowsFormsApp1
             SqlDataAdapter adtr = new SqlDataAdapter("select *from Sepet", baglanti);
             adtr.Fill(daset, "Sepet");
             dataGridView1.DataSource = daset.Tables["Sepet"];
-            dataGridView1.Columns[0].Visible=false;
-            dataGridView1.Columns[1].Visible=false;
-            dataGridView1.Columns[2].Visible=false;
-
+            
             baglanti.Close();
 
         }
@@ -89,33 +86,97 @@ namespace WindowsFormsApp1
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            Temizle();
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand("select *from urunekle where urunkodu like '"+textBox1.Text+"'", baglanti);
+            SqlDataReader read = komut.ExecuteReader();
+
+            while (read.Read())
+            {
+                textBox3.Text=read["urunadi"].ToString();
+                textBox4.Text=read["urunsatiş"].ToString();
+            }
+            baglanti.Close();
+        }
+
+        private void Temizle()
+        {
             if (textBox1.Text=="")
             {
                 foreach (Control item in groupBox1.Controls)
                 {
-                    if(item is TextBox  ){
+                    if (item is TextBox)
+                    {
                         if (item != textBox2)
                         {
                             item.Text="";
                         }
                     }
-                  
 
-                       
-                    
+
+
+
                 }
-            }
-                baglanti.Open();
-            SqlCommand komut = new SqlCommand("select *from urunekle where urunkodu like '"+textBox1.Text+"'", baglanti);
-            SqlDataReader read = komut.ExecuteReader();
-            
-                while (read.Read())
-                {
-                    textBox3.Text=read["urunadi"].ToString();
-                    textBox4.Text=read["urunsatiş"].ToString();
-                }
-                baglanti.Close();
             }
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand("insert into Sepet(urunkodu,urunadi,urunmiktar,satişfiyati,toplamfiyati) values(@urunkodu,@urunadi,@urunmiktar,@satişfiyati,@toplamfiyati)", baglanti);
+            komut.Parameters.AddWithValue("@urunkodu",textBox1.Text);
+            komut.Parameters.AddWithValue("@urunadi",textBox3.Text);
+            komut.Parameters.AddWithValue("@urunmiktar",int.Parse(textBox2.Text));
+            komut.Parameters.AddWithValue("@satişfiyati", double.Parse(textBox4.Text));
+            komut.Parameters.AddWithValue("@toplamfiyati", double.Parse(textBox5.Text));
+            komut.ExecuteNonQuery();
+            baglanti.Close() ;
+            textBox2.Text="1";
+            daset.Tables["Sepet"].Clear();
+            sepetlistele();
+            if (textBox1.Text=="")
+            {
+                foreach (Control item in groupBox1.Controls)
+                {
+                    if (item is TextBox)
+                    {
+                        if (item != textBox2)
+                        {
+                            item.Text="";
+                        }
+                    }
+
+
+
+
+                }
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                textBox5.Text=(double.Parse(textBox2.Text) * double.Parse(textBox4.Text)).ToString();
+            }
+            catch (Exception)
+            {
+
+                
+            }
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                textBox5.Text=(double.Parse(textBox2.Text) * double.Parse(textBox4.Text)).ToString();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+    }
     }
 
