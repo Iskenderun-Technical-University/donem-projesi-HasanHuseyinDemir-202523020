@@ -21,12 +21,11 @@ namespace WindowsFormsApp1
         DataSet daset = new DataSet();
         private void sepetlistele()
         {
-            baglanti.Open();
             SqlDataAdapter adtr = new SqlDataAdapter("select *from Sepet", baglanti);
             adtr.Fill(daset, "Sepet");
             dataGridView1.DataSource = daset.Tables["Sepet"];
-            
             baglanti.Close();
+            
 
         }
 
@@ -46,9 +45,24 @@ namespace WindowsFormsApp1
             this.Hide();
             form2.ShowDialog();
         }
+        private void hesapla()
+        {
+            try
+            {
+                baglanti.Open();
+                SqlCommand komut = new SqlCommand("select sum(toplamfiyati) from Sepet", baglanti);
+                lblGenelToplam.Text=komut.ExecuteScalar()+"TL";
+                baglanti.Close() ;
+            }
+            catch (Exception)
+            {
 
+            }   
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: Bu kod satırı 'market_otomasyonDataSet6.Sepet' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
+            this.sepetTableAdapter1.Fill(this.market_otomasyonDataSet6.Sepet);
             // TODO: Bu kod satırı 'market_otomasyonDataSet5.Sepet' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
             this.sepetTableAdapter.Fill(this.market_otomasyonDataSet5.Sepet);
             sepetlistele();
@@ -119,21 +133,57 @@ namespace WindowsFormsApp1
                 }
             }
         }
-
+        bool durum;
+        private void kodkontrol()
+        {
+            durum=true;
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand("select *from Sepet", baglanti);
+            SqlDataReader read =komut.ExecuteReader();
+            while (read.Read())
+            {
+                if (textBox1.Text==read["urunkodu"].ToString())
+                {
+                    durum= false;
+                }
+            }
+            baglanti.Close() ;
+        }
         private void button9_Click(object sender, EventArgs e)
         {
-            baglanti.Open();
-            SqlCommand komut = new SqlCommand("insert into Sepet(urunkodu,urunadi,urunmiktar,satişfiyati,toplamfiyati) values(@urunkodu,@urunadi,@urunmiktar,@satişfiyati,@toplamfiyati)", baglanti);
-            komut.Parameters.AddWithValue("@urunkodu",textBox1.Text);
-            komut.Parameters.AddWithValue("@urunadi",textBox3.Text);
-            komut.Parameters.AddWithValue("@urunmiktar",int.Parse(textBox2.Text));
-            komut.Parameters.AddWithValue("@satişfiyati", double.Parse(textBox4.Text));
-            komut.Parameters.AddWithValue("@toplamfiyati", double.Parse(textBox5.Text));
-            komut.ExecuteNonQuery();
-            baglanti.Close() ;
+             kodkontrol();
+            if (durum==true)
+            {
+                baglanti.Open();
+                SqlCommand komut = new SqlCommand("insert into Sepet(urunkodu,urunadi,urunmiktar,satişfiyati,toplamfiyati) values(@urunkodu,@urunadi,@urunmiktar,@satişfiyati,@toplamfiyati)", baglanti);
+                komut.Parameters.AddWithValue("@urunkodu", textBox1.Text);
+                komut.Parameters.AddWithValue("@urunadi", textBox3.Text);
+                komut.Parameters.AddWithValue("@urunmiktar", int.Parse(textBox2.Text));
+                komut.Parameters.AddWithValue("@satişfiyati", double.Parse(textBox4.Text));
+                komut.Parameters.AddWithValue("@toplamfiyati", double.Parse(textBox5.Text));
+                komut.ExecuteNonQuery();
+                baglanti.Close();
+
+            }
+            else
+            {
+
+                baglanti.Open();
+                SqlCommand komut2 = new SqlCommand("update Sepet set urunmiktar=urunmiktar +'"+int.Parse(textBox2.Text)+"'where urunkodu='"+(textBox1.Text)+"'", baglanti);
+                komut2.ExecuteNonQuery();
+
+                SqlCommand komut3 = new SqlCommand("update Sepet set toplamfiyati=urunmiktar*satişfiyati where urunkodu='"+(textBox1.Text)+"'", baglanti);
+
+                komut3.ExecuteNonQuery();
+                
+            }
+
+
             textBox2.Text="1";
             daset.Tables["Sepet"].Clear();
             sepetlistele();
+            hesapla();
+
             if (textBox1.Text=="")
             {
                 foreach (Control item in groupBox1.Controls)
@@ -176,6 +226,33 @@ namespace WindowsFormsApp1
             {
 
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand("delete from Sepet where urunkodu='"+dataGridView1.CurrentRow.Cells["urunkodu"].Value.ToString()+"'",baglanti);
+            komut.ExecuteNonQuery();
+            baglanti.Close();
+            MessageBox.Show("Ürün Sepetten Çıkarıldı");
+            daset.Tables["Sepet"].Clear();
+
+            sepetlistele();
+            hesapla();
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand("delete from Sepet " ,baglanti);
+            komut.ExecuteNonQuery();
+            baglanti.Close();
+            MessageBox.Show("Satış İptal Edildi");
+            daset.Tables["Sepet"].Clear();
+            sepetlistele();
+            hesapla();
+
         }
     }
     }

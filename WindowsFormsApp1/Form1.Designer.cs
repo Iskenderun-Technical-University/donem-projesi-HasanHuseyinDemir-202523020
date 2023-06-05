@@ -37,11 +37,14 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.urunkoduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.urunadiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.urunkoduDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.urunmiktarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.satişfiyatiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toplamfiyatiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.urunkodu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sepetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.market_otomasyonDataSet6 = new WindowsFormsApp1.market_otomasyonDataSet6();
             this.sepetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.market_otomasyonDataSet5 = new WindowsFormsApp1.market_otomasyonDataSet5();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -62,7 +65,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblGenelToplam = new System.Windows.Forms.Label();
             this.sepetTableAdapter = new WindowsFormsApp1.market_otomasyonDataSet5TableAdapters.SepetTableAdapter();
+            this.sepetTableAdapter1 = new WindowsFormsApp1.market_otomasyonDataSet6TableAdapters.SepetTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sepetBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.market_otomasyonDataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sepetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.market_otomasyonDataSet5)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -149,32 +155,34 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.urunkoduDataGridViewTextBoxColumn,
             this.urunadiDataGridViewTextBoxColumn,
+            this.urunkoduDataGridViewTextBoxColumn,
             this.urunmiktarDataGridViewTextBoxColumn,
             this.satişfiyatiDataGridViewTextBoxColumn,
-            this.toplamfiyatiDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.sepetBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(208, 133);
+            this.toplamfiyatiDataGridViewTextBoxColumn,
+            this.urunkodu});
+            this.dataGridView1.DataSource = this.sepetBindingSource1;
+            this.dataGridView1.Location = new System.Drawing.Point(211, 126);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(512, 240);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // urunkoduDataGridViewTextBoxColumn
-            // 
-            this.urunkoduDataGridViewTextBoxColumn.DataPropertyName = "urunkodu";
-            this.urunkoduDataGridViewTextBoxColumn.HeaderText = "urunkodu";
-            this.urunkoduDataGridViewTextBoxColumn.Name = "urunkoduDataGridViewTextBoxColumn";
             // 
             // urunadiDataGridViewTextBoxColumn
             // 
             this.urunadiDataGridViewTextBoxColumn.DataPropertyName = "urunadi";
             this.urunadiDataGridViewTextBoxColumn.HeaderText = "urunadi";
             this.urunadiDataGridViewTextBoxColumn.Name = "urunadiDataGridViewTextBoxColumn";
+            // 
+            // urunkoduDataGridViewTextBoxColumn
+            // 
+            this.urunkoduDataGridViewTextBoxColumn.DataPropertyName = "urunkodu";
+            this.urunkoduDataGridViewTextBoxColumn.HeaderText = "urunkodu";
+            this.urunkoduDataGridViewTextBoxColumn.Name = "urunkoduDataGridViewTextBoxColumn";
             // 
             // urunmiktarDataGridViewTextBoxColumn
             // 
@@ -193,6 +201,22 @@
             this.toplamfiyatiDataGridViewTextBoxColumn.DataPropertyName = "toplamfiyati";
             this.toplamfiyatiDataGridViewTextBoxColumn.HeaderText = "toplamfiyati";
             this.toplamfiyatiDataGridViewTextBoxColumn.Name = "toplamfiyatiDataGridViewTextBoxColumn";
+            // 
+            // urunkodu
+            // 
+            this.urunkodu.DataPropertyName = "urunkodu";
+            this.urunkodu.HeaderText = "urunkodu";
+            this.urunkodu.Name = "urunkodu";
+            // 
+            // sepetBindingSource1
+            // 
+            this.sepetBindingSource1.DataMember = "Sepet";
+            this.sepetBindingSource1.DataSource = this.market_otomasyonDataSet6;
+            // 
+            // market_otomasyonDataSet6
+            // 
+            this.market_otomasyonDataSet6.DataSetName = "market_otomasyonDataSet6";
+            this.market_otomasyonDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // sepetBindingSource
             // 
@@ -318,6 +342,7 @@
             this.button7.TabIndex = 5;
             this.button7.Text = "SİL";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -327,6 +352,7 @@
             this.button8.TabIndex = 6;
             this.button8.Text = "İPTAL";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
@@ -350,7 +376,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(381, 388);
+            this.label6.Location = new System.Drawing.Point(347, 388);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 13);
             this.label6.TabIndex = 9;
@@ -367,6 +393,10 @@
             // sepetTableAdapter
             // 
             this.sepetTableAdapter.ClearBeforeFill = true;
+            // 
+            // sepetTableAdapter1
+            // 
+            this.sepetTableAdapter1.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -394,6 +424,8 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sepetBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.market_otomasyonDataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sepetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.market_otomasyonDataSet5)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -432,11 +464,15 @@
         private market_otomasyonDataSet5 market_otomasyonDataSet5;
         private System.Windows.Forms.BindingSource sepetBindingSource;
         private market_otomasyonDataSet5TableAdapters.SepetTableAdapter sepetTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn urunkoduDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn urunadiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn urunkoduDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn urunmiktarDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn satişfiyatiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn toplamfiyatiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn urunkodu;
+        private market_otomasyonDataSet6 market_otomasyonDataSet6;
+        private System.Windows.Forms.BindingSource sepetBindingSource1;
+        private market_otomasyonDataSet6TableAdapters.SepetTableAdapter sepetTableAdapter1;
     }
 }
 
