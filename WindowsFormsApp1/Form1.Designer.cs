@@ -66,6 +66,7 @@
             this.lblGenelToplam = new System.Windows.Forms.Label();
             this.sepetTableAdapter = new WindowsFormsApp1.market_otomasyonDataSet5TableAdapters.SepetTableAdapter();
             this.sepetTableAdapter1 = new WindowsFormsApp1.market_otomasyonDataSet6TableAdapters.SepetTableAdapter();
+            this.urunmiktar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sepetBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.market_otomasyonDataSet6)).BeginInit();
@@ -164,7 +165,8 @@
             this.urunmiktarDataGridViewTextBoxColumn,
             this.satişfiyatiDataGridViewTextBoxColumn,
             this.toplamfiyatiDataGridViewTextBoxColumn,
-            this.urunkodu});
+            this.urunkodu,
+            this.urunmiktar});
             this.dataGridView1.DataSource = this.sepetBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(211, 126);
             this.dataGridView1.Name = "dataGridView1";
@@ -372,6 +374,7 @@
             this.button10.TabIndex = 8;
             this.button10.Text = "SATIŞ YAP";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // label6
             // 
@@ -397,6 +400,12 @@
             // sepetTableAdapter1
             // 
             this.sepetTableAdapter1.ClearBeforeFill = true;
+            // 
+            // urunmiktar
+            // 
+            this.urunmiktar.DataPropertyName = "urunmiktar";
+            this.urunmiktar.HeaderText = "urunmiktar";
+            this.urunmiktar.Name = "urunmiktar";
             // 
             // Form1
             // 
@@ -473,6 +482,7 @@
         private market_otomasyonDataSet6 market_otomasyonDataSet6;
         private System.Windows.Forms.BindingSource sepetBindingSource1;
         private market_otomasyonDataSet6TableAdapters.SepetTableAdapter sepetTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn urunmiktar;
     }
 }
 

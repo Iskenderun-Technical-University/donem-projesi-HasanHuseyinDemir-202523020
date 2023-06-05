@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="market_otomasyonDataSet7" targetNamespace="http://tempuri.org/market_otomasyonDataSet7.xsd" xmlns:mstns="http://tempuri.org/market_otomasyonDataSet7.xsd" xmlns="http://tempuri.org/market_otomasyonDataSet7.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="market_otomasyonConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="market_otomasyonConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WindowsFormsApp1.Properties.Settings.GlobalReference.Default.market_otomasyonConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="urunekleTableAdapter" GeneratorDataComponentClassName="urunekleTableAdapter" Name="urunekle" UserDataComponentName="urunekleTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="market_otomasyonConnectionString (Settings)" DbObjectName="market_otomasyon.dbo.urunekle" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT urunadi, urunkodu, urunmiktar FROM dbo.urunekle</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="urunadi" DataSetColumn="urunadi" />
+              <Mapping SourceColumn="urunkodu" DataSetColumn="urunkodu" />
+              <Mapping SourceColumn="urunmiktar" DataSetColumn="urunmiktar" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="market_otomasyonDataSet7" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="market_otomasyonDataSet7" msprop:Generator_DataSetName="market_otomasyonDataSet7">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="urunekle" msprop:Generator_RowEvHandlerName="urunekleRowChangeEventHandler" msprop:Generator_RowDeletedName="urunekleRowDeleted" msprop:Generator_RowDeletingName="urunekleRowDeleting" msprop:Generator_RowEvArgName="urunekleRowChangeEvent" msprop:Generator_TablePropName="urunekle" msprop:Generator_RowChangedName="urunekleRowChanged" msprop:Generator_RowChangingName="urunekleRowChanging" msprop:Generator_TableClassName="urunekleDataTable" msprop:Generator_RowClassName="urunekleRow" msprop:Generator_TableVarName="tableurunekle" msprop:Generator_UserTableName="urunekle">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="urunadi" msprop:Generator_ColumnPropNameInRow="urunadi" msprop:Generator_ColumnPropNameInTable="urunadiColumn" msprop:Generator_ColumnVarNameInTable="columnurunadi" msprop:Generator_UserColumnName="urunadi">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="urunkodu" msprop:Generator_ColumnPropNameInRow="urunkodu" msprop:Generator_ColumnPropNameInTable="urunkoduColumn" msprop:Generator_ColumnVarNameInTable="columnurunkodu" msprop:Generator_UserColumnName="urunkodu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="urunmiktar" msprop:Generator_ColumnPropNameInRow="urunmiktar" msprop:Generator_ColumnPropNameInTable="urunmiktarColumn" msprop:Generator_ColumnVarNameInTable="columnurunmiktar" msprop:Generator_UserColumnName="urunmiktar" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

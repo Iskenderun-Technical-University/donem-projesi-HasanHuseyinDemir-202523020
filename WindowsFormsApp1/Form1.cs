@@ -31,7 +31,9 @@ namespace WindowsFormsApp1
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            Form5 form5 = new Form5();
+            this.Hide();
+            form5.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -253,6 +255,25 @@ namespace WindowsFormsApp1
             sepetlistele();
             hesapla();
 
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            for(int i=0;i<dataGridView1.Rows.Count-1;i++)
+            {
+                baglanti.Open();
+                SqlCommand komut2 = new SqlCommand("update urunekle set urunmiktar=urunmiktar -'"+int.Parse(dataGridView1.Rows[i].Cells["urunmiktar"].Value.ToString())+"'where urunkodu='"+dataGridView1.Rows[i].Cells["urunkodu"].Value.ToString()+"'", baglanti);
+                komut2.ExecuteNonQuery();
+                baglanti.Close();
+
+            }
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand("delete from Sepet ", baglanti);
+            komut.ExecuteNonQuery();
+            baglanti.Close();
+            daset.Tables["Sepet"].Clear();
+            sepetlistele();
+            hesapla();
         }
     }
     }
